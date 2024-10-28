@@ -17,8 +17,15 @@ setup.php
 /app/lib/Parsers/dompdf/lib/fonts/*fm.php
 /app/log/log*.txt
 /app/log/*.log
+
+/themes/*
+!/themes/ics22/
+/themes/ics24/
+!/themes/default/
+
 /themes/default/css/local.css
 /themes/default/views/bundles/inspector_info.php
+
 /support/scripts/*.php
 /support/scripts/*.sh
 /vendor/

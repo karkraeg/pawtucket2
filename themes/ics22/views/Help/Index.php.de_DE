@@ -1,0 +1,136 @@
+<?php
+MetaTagManager::setWindowTitle($this->request->config->get('app_display_name').': Hilfe');
+?>
+<?php
+$va_tmp = explode('/', str_replace('\\', '/', $_SERVER['SCRIPT_NAME']));
+array_pop($va_tmp);
+$vs_path = join('/', $va_tmp);
+?>
+<?php
+$t_item = $this->getVar('item');
+?>
+<H1 style="text-align:center">Hilfe</H1>
+
+<div class="row">
+    <div class="col-sm-2"></div>
+    <div class="col-sm-8">
+        <p>Hier finden sie Hilfe bei der Nutzung unserer Sammlungsdatenbank.</p>
+<p><h4><b>Inhalt</b></h4>
+<ul>
+
+   <li><a href="#menuepunkte">Das Menü</a></li>
+   <li><a href="#bedienungshilfe">Tipps zur Bedienung</a></li>
+   <li><a href="#datenbankaufbau">Datenbankaufbau</a></li>
+   <li><a href="#normdaten">Normdaten</a></li>
+
+   </ul>
+   </p>
+<hr size="1" noshade>
+
+
+<h3><a name="menuepunkte"></a><b>Das Menü</b></h3> </p>
+
+<?php echo '<img src="'.$vs_path.'/themes/ics22/assets/pawtucket/images/menue-de.jpg"  width="max-width: 100%"/>' ?>
+<p><h4><a name="sprachauswahl"></a><b>Sprachauswahl</b></h4>    </p>
+<p>Hier können Sie zwischen den Sprachversionen Englisch und Deutsch wählen. </p>
+
+<p><h4><a name="startseite"></a><b>Startseite</b></h4>    </p>
+<p>Auf der Startseite finden Sie eine auswahl aus unserem Sammlungsbestand.  </p>
+<!--
+<p><h4><a name="stoebern"></a><b>Stöbern</b></h4>    </p>
+<p>Über die Funktion Stöbern können Sie den Bestand nach unterschiedlichen Kriterien filtern. Wählen Sie dazu aus dem rechten Menü einen Eintrag aus. Das Ergebnis kann dann über die Wahl zusätzlicher Aspekte weiter gefiltert werden. </p>
+
+<p><h4><a name="titelsuche"></a><b>Titelsuche</b></h4>    </p>
+<p>Über diesen Menüpunkt erhalten sie ein Suchfeld für die gezielte Suche nach Titeln. Im Gegensatz zur Schnellsuche wird nur im Titelfeld recherchiert. </p> -->
+
+<p><h4><a name="hilfe"></a><b>Hilfe</b></h4>    </p>
+<p>Diese Hilfeseite aufrufen. </p>
+
+<p><h4><a name="schnellsuche"></a><b>Schnellsuche</b></h4>    </p>
+
+<?php echo '<img src="'.$vs_path.'/themes/ics22/assets/pawtucket/images/suchergebnis.jpg"  width="max-width: 100%"/>' ?>
+
+<p>Im Suchfeld rechts oben können sie einfach einen Stichwort eingeben und danach suchen lassen. Als Ergebnis bekommen sie Objekte, Werke und Werkversionen angezeigt. </p>
+
+<p><h4><a name="anmeldung"></a><b>Anmeldung</b></h4>    </p>
+<p>Eine Anmeldung ist zurzeit nur für Mitarbeiter*innen der ICS vorgesehen. </p>
+
+<hr size="1" noshade>
+
+<p><h3><a name="bedienungshilfe"></a><b>Tipps zur Bedienung</b></h3></p>
+<p><h4><b>Bildanzeige</b></h4></p>
+
+<?php echo '<img src="'.$vs_path.'/themes/ics22/assets/pawtucket/images/Bildmenue.jpg"  width="max-width: 100%"/>' ?>
+
+<p>Wenn zu dem gesuchten Objekt eine Abbildung vorhanden ist, kann sie vergr&ouml;&szlig;ert werden. Dies erfolgt durch Klick auf das Lupensymbol im Men&uuml;, das sich am oberen Rand der Abbildung befindet. (Die Nutzung des Koffersymbols (Anmeldung bei Lightbox) kann nur von registrierten Nutzer vorgenommen werden.)</p>
+
+
+<?php echo '<img src="'.$vs_path.'/themes/ics22/assets/pawtucket/images/Bildbetrachter.jpg"  width="max-width: 100%"/>' ?>
+
+<p>Im neuen Layer wird die Abbildung vergr&ouml;&szlig;ert angezeigt. &Uuml;ber ein Men&uuml; k&ouml;nnen Bildmanipulationen vorgenommen werden (Drehen, Helligkeitsanpassung, Kontrastregelung, Farbs&auml;ttigungsanpassung, S/W-Konvertierung, Farbumkehr sowie R&uuml;ckstellung aller Manipulationen). </p>
+
+<p><h4><b>Listendownload als PDF</b></h4>
+In der Suchergebnissen von Werken, Werkversionen und Objekten k&ouml;nnen die Suchergebnisse als Liste im PDF-Format ausgedruckt werden. Dazu klicken Sie bitte auf das Zahnrad neben der &Uuml;berschrift und "Checklist" oder "PDF (thumbnails)" ausw&auml;hlen.</p>
+
+<?php echo '<img src="'.$vs_path.'/themes/ics22/assets/pawtucket/images/listendruck.jpg"  width="max-width: 100%"/>' ?>
+
+<p><h4><b>Umschalten zwischen Thumbnail- und Listenansicht</b></h4>
+
+<?php echo '<img src="'.$vs_path.'/themes/ics22/assets/pawtucket/images/ansichtswechsel.jpg"  width="max-width: 100%"/>' ?>
+
+Bei den Ergebnislisten kann zwischen der Anzeige der Objekte als Thumbnails oder als Liste gew&auml;hlt werden. <br>Bei der Listenansicht symbolisiert ein kleines Bild das Vorhandensein einer Abbildung.</p>
+
+<?php echo '<img src="'.$vs_path.'/themes/ics22/assets/pawtucket/images/abbild.jpg"  width="max-width: 100%"/>' ?>
+
+
+
+<hr size="1" noshade>
+
+<p><h3><a name="datenbankaufbau"></a><b>Datenbankaufbau</b></h3> </p>
+<p>Um die Recherchemöglichkeiten effektiv nutzen zu können, ist es sinnvoll, die Struktur der Datenbank zu erklären. Die Struktur der Datenbank basiert auf der Unterscheidung von Werk, Werkversion und Objekt</p>
+
+<?php echo '<img src="'.$vs_path.'/themes/ics22/assets/pawtucket/images/systemaufbau-ICS.jpg"  width="max-width: 80%"/>' ?>
+
+<p><i><b>Hinweis</b>:Da es sich bei der ICS um eine Zusammenlegung unterschiedlicher Datenbankinhalte handelt, ist die Struktur noch nicht auf alle Objekte übertragen, d. h. es fehlen noch Einträge bei den Werken und Werkversionen. Aus diesem Grund ist bei der Suche nach Objekttiteln und der Stöbern-Funktion aktuell noch keine Vollständigkeit erreicht worden.</i>
+</p>
+<p><a name="werk"></a><h4>Werk</h4> </p>
+<p>Im Bereich Werk werden die allgemeinen Informationen zu dem Spiel erfasst. Hier finden sich Angaben zum Titel und Untertitel, Genre sowie Themen-, Personen-, Orts- und Zeitbezügen.</p>
+<p><h5>Werkdetails</h5></p>
+<p>Auf der linken Seite finden sie Informationen zum Spielmodus, Genre und den Verschlagwortungen (Personen, Orte, Zeiten, Themen). Die Schlagworte sind mit Links auf frei verfügbare Internetressourcen versehen.  <br>
+Auf der rechten Seite finden sie die mit dem Werk in Beziehung stehende Entitäten (Personen, Institutionen, Unternehmen) sowie die zugehörigen Werkversionen. </p>
+
+<p><a name="werkversion"></a><h4>Werkversion</h4> </p>
+<p>Den Werken sind - meist mehrere - Werkversionen zugeordnet, die sich auf die Portierung des Spiels auf unterschiedliche Plattformen beziehen. Hier werden Informationen zu Entwicklern und zu Systemvoraussetzungen erfasst.
+</p>
+<p><h5>Werkversionsdetails</h5></p>
+<p>Auf dieser Detailseite finden Sie links Informationen zur Altersbeschränkung (USK und PEGI) sowie die Systemvoraussetzungen. Auf der rechten Seite werden mit der Werkversion verknüpfte Entitäten (Personen, Unternehmen, Organisationen) sowie zum Werkeintrag angezeigt.</p>
+
+<p><a name="objekt"></a><h4>Objekt</h4></p>
+<p>Da es sich bei der ICS um eine Sammlung handelt, wird jedes Objekt mit seinen speziellen Informationen eigenständig erfasst. Hier finden Sie Angaben zum Publisher, zu den Datenträgern und dem Inhalt der Verkaufsboxen, worunter auch individuelle Beigaben, wie vom Nutzer selbst hergestellte Lösungshilfen in Form von schriftlichen Dokumenten oder Zeichnungen befinden können. Ebenso wird die individuelle Inventarnummer und die zugehörige Sammlung angezeigt. Des Weiteren gibt es - falls vorhanden - einen Link auf die Werkversion, worüber auch der Werkeintrag eingebunden ist.  </p>
+<p><h5>Objektdetailseite</h5></p>
+<p>Die Objektdetailseite verbindet Angaben aus Werk, Werkversion und Objekt. Die Titelvarianten in Französisch (fr), Spanisch (es), Niederländisch (nl), Japanisch (ja), Koreanisch (ko) und Chinesisch (zh) werden direkt aus Wikidata ausgelesen, sofern ein entsprechender Eintrag vorhanden ist.</p>
+
+<hr size="1" noshade>
+
+<p><h3><a name="normdaten"></a><b>Normdaten</b></h3></p>
+<p>Ein wesentlicher Teil des Dokumentationskonzeptes der ICS ist die möglichst umfangreiche Nutzung von frei zugänglichen Informationsressourcen. Diese Datennetze sollen zukünftig die Rechercheergebnisse verbessern und zudem die Datenanreicherung ermöglichen.
+<br>
+Zu diesem Zweck finden sich im System Verweise auf folgende Webservices:</p>
+<ul>
+<li><a href="https://www.dnb.de/DE/Professionell/Standardisierung/GND/gnd_node.html" target="_blank"><b>GND</b></a> (Gemeinsame Normdatenbank)<br>
+Die Gemeinsame Normdatei (GND) ist eine Normdatei für Personen, Körperschaften, Geografika, Sachschlagwörter und Werktitel. Sie wird von der Deutschen Nationalbibliothek, allen deutschsprachigen Bibliotheksverbünden mit den angeschlossenen Bibliotheken, der Zeitschriftendatenbank (ZDB) und zahlreichen weiteren Einrichtungen gemeinschaftlich geführt.</li>
+<li><a href="https://www.wikidata.org/wiki/Wikidata:Main_Page" target="_blank"><b>Wikidata</b></a><br>
+Ein Projekt zur Erstellung einer Wissensdatenbank von Wikimedia Deutschland.</li>
+<li><a href="https://viaf.org/" target="_blank"><b>VIAF</b></a> (Virtual International Authority Files)<br>
+VIAF ist eine internationale Normdatei, deren Inhalte sich aus den Daten mehrere Nationalbibliotheken und Bibliotheksverb&uuml;nde zusammensetzen.</li>
+<li><a href="http://www.iconclass.nl/home" target="_blank" ><b>Iconclass</b></a><br>
+Iconclass ist ein Klassifizierung&shy;skonzept zur Erfassung und inhaltlichen Erschlie&szlig;ung von Bildinhalten</li>
+<li><a href="http://www.getty.edu/research/tools/vocabularies/aat/" target="_blank" ><b>AAT</b> </a>(Art & Architecture Thesaurus)<br>
+Der AAT ist ein hierarchisch gegliederter, polyhierarchischer und multilingualer Thesaurus f&uuml;r die Objekterschlie&szlig;ung von kunst- und kulturhistorischen Sammlungen des Getty Research Institutes.</li>
+<li><a href="http://www.getty.edu/research/tools/vocabularies/tgn/index.html" target="_blank" ><b>TGN</b></a> (Thesaurus of Geographic Names)<br>
+Der TGN ist ein Thesaurus f&uuml;r Ortbezeichnungen weltweit, herausgegeben vom Getty Research Institute.</li>
+</ul>
+
+    </div>
+    <div class="col-sm-2"></div>
+</div>

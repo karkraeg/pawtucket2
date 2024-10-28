@@ -5,3 +5,6 @@ Disallow: /index.php/Detail/GetRepresentationInfo*
 Disallow: /index.php/Detail/GetRepresentationInfo*
 Disallow: /index.php/Search/*/download/*
 Disallow: /index.php/Browse/*/images/*
+
+User-agent: *
+Crawl-delay: 100

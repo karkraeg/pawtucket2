@@ -1,0 +1,33 @@
+
+<div class="row">
+	<div class="col-sm-8 " style='border-right:1px solid #ddd;'>
+		<h1>Titelsuche Objekte</h1>
+
+<?php
+print "<p>Geben Sie Ihren Suchbegriff in das unten stehende Feld ein.</p>";
+?>
+
+{{{form}}}
+
+<div class='advancedContainer'>
+
+	<div class='row'>
+		<div class="advancedSearchField col-sm-12">
+			<span class='formLabel' data-toggle="popover" data-trigger="hover" data-content="Beschränken Sie Ihre Suche nur auf Objekttitel.">Titel</span>
+			{{{ca_objects.preferred_labels.name%width=220px}}}
+		</div>
+	</div>
+</div>
+
+{{{/form}}}
+
+	</div>
+
+</div><!-- end row -->
+
+<script>
+	jQuery(document).ready(function() {
+		$('.advancedSearchField .formLabel').popover();
+	});
+
+</script>

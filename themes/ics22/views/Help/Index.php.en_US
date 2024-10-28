@@ -1,0 +1,133 @@
+<?php
+MetaTagManager::setWindowTitle($this->request->config->get('app_display_name').': Hilfe');
+?>
+<?php
+$va_tmp = explode('/', str_replace('\\', '/', $_SERVER['SCRIPT_NAME']));
+array_pop($va_tmp);
+$vs_path = join('/', $va_tmp);
+?>
+<?php
+$t_item = $this->getVar('item');
+?>
+<H1 style="text-align:center">Help</H1>
+
+<div class="row">
+    <div class="col-sm-2"></div>
+    <div class="col-sm-8">
+        <p>Here you will find help on how to use our collection database.</p>
+<p><h4><b>Content</b></h4>
+<ul>
+
+   <li><a href="#menuepunkte">Menu items</a></li>
+   <li><a href="#bedienungshilfe">Operation tips</a></li>
+   <li><a href="#datenbankaufbau">Database structure</a></li>
+   <li><a href="#normdaten">Controlled vocabularies</a></li>
+
+   </ul>
+   </p>
+<hr size="1" noshade>
+
+
+<h3><a name="menuepunkte"></a><b>Menu items</b></h3> </p>
+<?php echo '<img src="'.$vs_path.'/themes/ics22/assets/pawtucket/images/menue-en.jpg"  width="max-width: 100%"/>' ?>
+
+<p><h4><a name="sprachauswahl"></a><b>Language selection</b></h4>    </p>
+<p>Choose between the languages English or German. </p>
+
+<p><h4><a name="startseite"></a><b>Home page</b></h4>    </p>
+<p>On the home page you will find a selection of games from our collection.  </p>
+<!--
+<p><h4><a name="stoebern"></a><b>Browse</b></h4>    </p>
+<p>You can use the Browse function to filter the collection according to different criteria. To do so, select an entry from the right-hand menu. The result can be further filtered by selecting additional aspects. </p>
+
+<p><h4><a name="titelsuche"></a><b>Title search</b></h4>    </p>
+<p>This menu item provides you with a search field for a specific search for titles. In contrast to the quick search, only the title field is searched.. </p> -->
+
+<p><h4><a name="hilfe"></a><b>Help</b></h4>    </p>
+<p>Go to this help page. </p>
+
+<p><h4><a name="schnellsuche"></a><b>Quick search</b></h4>    </p>
+<p>In the search field at the top right, you can simply enter a keyword and search for it. The search is carried out via several data fields. The results are displayed in the form of objects, works and work versions. If you would like to search for specific titles, please use the title search. </p>
+
+<?php echo '<img src="'.$vs_path.'/themes/ics22/assets/pawtucket/images/suchergebnis-en.jpg"  width="max-width: 100%"/>' ?>
+
+<p><h4><a name="anmeldung"></a><b>Registration</b></h4>    </p>
+<p>Registration is currently only for ICS employees. </p>
+
+<hr size="1" noshade>
+
+<p><h3><a name="bedienungshilfe"></a><b>Operation tips</b></h3></p>
+<p><h4><b>Image display</b></h4></p>
+
+<?php echo '<img src="'.$vs_path.'/themes/ics22/assets/pawtucket/images/Bildmenue	.jpg"  width="max-width: 100%"/>' ?>
+<p>If there is a picture of the object you are looking for, you can enlarge it. This is done by clicking on the magnifying glass symbol in the menu located at the top of the image. (The use of the suitcase symbol (login to Lightbox) can only be done by registered users).</p>
+
+<?php echo '<img src="'.$vs_path.'/themes/ics22/assets/pawtucket/images/Bildbetrachter.jpg"  width="max-width: 100%"/>' ?>
+
+<p>In the new layer, the image is displayed enlarged. Image manipulations can be made via a menu (rotation, brightness adjustment, contrast adjustment, colour saturation adjustment, B/W conversion, colour inversion as well as resetting of all manipulations). </p>
+
+<p><h4><b>List download as PDF</b></h4>
+In the search results for works, versions of works and objects, the search results can be printed out as a list in PDF format. To do so, please click on the cogwheel next to the heading and select "Checklist" or "PDF (thumbnails)".</p>
+
+<?php echo '<img src="'.$vs_path.'/themes/ics22/assets/pawtucket/images/listendruck-en.jpg"  width="max-width: 100%"/>' ?>
+
+<p><h4><b>Switching between thumbnail and list view</b></h4></p>
+<?php echo '<img src="'.$vs_path.'/themes/ics22/assets/pawtucket/images/ansichtswechsel.jpg"  width="max-width: 100%"/>' ?>
+
+<p>For the result lists, you can choose between displaying the objects as thumbnails or as a list. In the list view, a small picture symbolises the presence of an image.</p>
+
+
+<?php echo '<img src="'.$vs_path.'/themes/ics22/assets/pawtucket/images/abbild.jpg"  width="max-width: 100%"/>' ?>
+
+<hr size="1" noshade>
+
+<p><h3><a name="datenbankaufbau"></a><b>Database structure</b></h3> </p>
+<p>In order to be able to use the search options effectively, it is useful to explain the structure of the database. The structure of the database is based on the distinction between work, work version and object. </p>
+
+
+<?php echo '<img src="'.$vs_path.'/themes/ics22/assets/pawtucket/images/systemaufbau-ICS-en.jpg"  width="max-width: 80%"/>' ?>
+
+<p><i><b>Note</b>: As the ICS is a consolidation of different database contents, the structure has not yet been transferred to all objects, i.e. entries are still missing for works and work versions. For this reason, the search for object titles and the browse function are not yet complete.</i>
+</p>
+<p><a name="werk"></a><h4>Work</h4> </p>
+<p>In the Work section, general information about the game is recorded. Here you will find information on the title and subtitle, genre as well as references to themes, persons, places and times..</p>
+<p><h5>Work details</h5></p>
+<p>On the left side you will find information on the game mode, genre and keywords (persons, places, times, themes). The keywords are provided with links to freely available internet resources.  <br>
+On the right-hand side you will find the entities related to the work (persons, institutions, companies) as well as the associated work versions.  </p>
+
+<p><a name="werkversion"></a><h4>Work version</h4> </p>
+<p>The works are assigned - usually several - work versions that relate to the porting of the game to different platforms. Information on developers and system requirements is recorded here.
+</p>
+<p><h5>Work versions details</h5></p>
+<p>On this detail page, you will find information on the age ratings (USK and PEGI) as well as the system requirements on the left. On the right, entities linked to the work version (persons, companies, organisations) as well as to the work entry are displayed..</p>
+
+<p><a name="objekt"></a><h4>Object</h4></p>
+<p>Since the ICS is a collection, each object is recorded independently with its specific information. Here you will find information on the publisher, the data carriers and the contents of the sales boxes, which may also include individual additions, such as solution aids produced by the user himself in the form of written documents or drawings. The individual inventory number and the corresponding collection are also displayed. Furthermore, there is - if available - a link to the work version, via which the work entry is also integrated.  </p>
+<p><h5>Objekt details</h5></p>
+<p>The object details page combines information from the work, work version and object. The title variants in French (fr), Spanish (es), Dutch (nl), Japanese (ja), Korean (ko) and Chinese (zh) are imported directly from Wikidata if a corresponding entry exists.</p>
+
+<hr size="1" noshade>
+
+<p><h3><a name="normdaten"></a><b>Controlled vocabularies</b></h3></p>
+<p>An essential part of the ICS documentation concept is to use freely accessible information resources as extensively as possible. These data networks should improve research results in the future and enable data enrichment.
+<br>
+For this purpose, the system contains references to the following web services:</p>
+<ul>
+<li><a href="https://www.dnb.de/DE/Professionell/Standardisierung/GND/gnd_node.html" target="_blank"><b>GND</b></a> (Gemeinsame Normdatenbank)<br>
+The Gemeinsame Normdatei (GND) is a standards file for persons, corporate bodies, geographic information, subject headings and work titles. It is maintained jointly by the German National Library, all German-language library networks with their affiliated libraries, the Zeitschriftendatenbank (ZDB) and numerous other institutions.</li>
+<li><a href="https://www.wikidata.org/wiki/Wikidata:Main_Page" target="_blank"><b>Wikidata</b></a><br>
+A project to create a knowledge database by Wikimedia Germany.</li>
+<li><a href="https://viaf.org/" target="_blank"><b>VIAF</b></a> (Virtual International Authority Files)<br>
+VIAF is an international standard vocabulary whose content is composed of data from several national libraries and library networks.</li>
+<li><a href="http://www.iconclass.nl/home" target="_blank" ><b>Iconclass</b></a><br>
+Iconclass is a classification concept for recording and indexing the content of images.</li>
+<li><a href="http://www.getty.edu/research/tools/vocabularies/aat/" target="_blank" ><b>AAT</b> </a>(Art & Architecture Thesaurus)<br>
+The AAT is a hierarchically structured, polyhierarchical and multilingual thesaurus for object indexing of art and cultural history collections of the Getty Research Institute.</li>
+<li><a href="http://www.getty.edu/research/tools/vocabularies/tgn/index.html" target="_blank" ><b>TGN</b></a> (Thesaurus of Geographic Names)<br>
+The TGN is a thesaurus for place names worldwide, published by the Getty Research Institute.</li>
+</ul>
+
+
+    </div>
+    <div class="col-sm-2"></div>
+</div>
